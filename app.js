@@ -9,8 +9,18 @@ function exibirTextoNaTela(tag, texto) {
     campo.innerHTML = texto;    
 }
 
-function verificarChute(chute) {
-    console.log(numeroSecreto);    
+function verificarChute() {
+    let chute = document.querySelector('input').value;
+    if (chute == numeroSecreto) {
+        exibirTextoNaTela('h1', 'Parabéns, você acertou!');
+        exibirTextoNaTela('p', 'Você descobrio o número secreto!');
+    } else {
+        if (chute > numeroSecreto) {
+            exibirTextoNaTela('p', 'O número secreto é menor');
+        } else {
+            exibirTextoNaTela('p', 'O número secreto é maior');
+        }
+    }
 }
 
 exibirTextoNaTela('h1', 'Jogo do número secreto');
